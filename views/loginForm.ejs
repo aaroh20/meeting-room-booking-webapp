@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="/stylesheets/css/bootstrap.css" rel="stylesheet">
+    <script src="/javascripts/js/bootstrap.min.js"></script>
+    <script src="/javascripts/js/jquery-1.11.1.min.js"></script>
+    <script src="/javascripts/js/bootstrap.min.js"></script>
+     <script src="/javascripts/js/jquery-1.11.1.min.js"></script>
+     <link rel="stylesheet"  type="text/css" href="/stylesheets/css/login.css" >
+     <link rel="stylesheet" type="text/css" href="/stylesheets/css/dropdown.css">
+
+
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div class="container">
+  
+        <div class="row" id="pwd-container">
+          <div class="col-md-4"></div>
+          
+          <div class="col-md-4">
+            <section class="login-form">
+              <form method="post" action="/login" role="login">
+              <img src="/images/Cerner_Corporation_logo.png" alt="Logo" width="150" height="42">
+                
+                <select>
+                 <option value="Admin">Admin</option>
+                 <option value="Associate">Associate</option>
+                </select>
+              
+                <input type="text" name="username" id="username" placeholder="Associate ID" required class="form-control input-lg" />
+                
+                <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+    
+                
+                
+                <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+
+                
+              </form>
+              
+             <!-- <div class="form-links">
+                <a href="#">www.website.com</a>
+              </div>-->
+            </section>  
+            </div>
+            
+            <div class="col-md-4"></div>
+            
+      
+        </div>    
+      </div>
+    
+      
+  </body>
+</html>

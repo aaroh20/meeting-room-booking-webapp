@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  
+        <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 </head>
 <body>
     <% if(isAuthenticated) {
@@ -16,6 +25,171 @@
     <a>Welcome to Main Page</a>
     <a href="/main/data">Access Data</a>
     <a href="/logout">LogOut</a>
+
+
+    <h1>Associate Page</h1>
+
+
+	<div>
+		<form action="#" onsubmit="Go()" id="selectionForm">
+			Start Date:
+				<input type="date" name="start_date">
+			&nbsp;&nbsp;&nbsp;
+			Time:
+				<select  name="startTime">
+					
+					<option value="PM">AM</option>
+					<option value="PM">PM</option>		  
+				</select>
+			 
+			<br><br>	
+			Minimum Capacity:
+			<input type="number" name="capacity">
+			<br><br>
+			Location:
+			<select id="location" name="location">
+				  <option value="GTP">GTP</option>
+				  <option value="C2">C2/H2</option>		  
+				</select>
+			<br><br>
+			<input type="submit" class="btn btn-primary" value="GO">
+
+		</form>
+	</div>
+	<div id="roomList" style="display: none;">
+		<br><br><br><br>
+		
+		<table id="example" border="11"  class="table table-striped table-bordered"  style="width:100%">
+			<thead>
+				<tr>
+					<th>Room Name</th>
+					<th>Capacity</th>
+					<th>Location</th>
+					<th>Book</th>
+				</tr>
+			</thead>
+			<tbody>
+				<div id="h2c2">
+				<tr>
+					<td>Training Room A</td>
+					<td>50</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" id="demo" onclick="myFun()">Book</button></td>
+				</tr>
+				<tr>
+					<td>Training Room B</td>
+					<td>30</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Training Room C</td>
+					<td>30</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Benjamin Franklin</td>
+					<td>20</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Homi Baba</td>
+					<td>20</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Marie Curie</td>
+					<td>20</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Charles D/Gobind Khurana</td>
+					<td>35</td>
+					<td>C2</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				</div>
+				<div id="gtp">
+				<tr>
+					<td>Training Room  3A 15</td>
+					<td>35</td>
+					<td>GTP</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+				<tr>
+					<td>Training Room  3A 13</td>
+					<td>35</td>
+					<td>GTP</td>
+					<td><button class="btn btn-primary" type="button" onclick="window.location.href='action.html';">Book</button></td>
+				</tr>
+			</div>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Room Name</th>
+					<th>Capacity</th>
+					<th>Location</th>
+					<th>Book</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<div id="purposeForm" style="display: none;">
+		<table>
+		<tr>
+			<td>Purpose &nbsp;</td>
+			<td><textarea name="textarea" style="width:250px;height:50px;"></textarea></td>
+			
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;Details&nbsp; </td>
+			<td><textarea name="textarea" style="width:250px;height:50px;"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="4"><br><p align="center"><input class="btn btn-primary" type="submit" value="Submit"></p></td>
+		</tr>
+	</table>
+	</div>
+	
+	<script>
+		function Go() {
+		if(document.getElementById("location").value=="GTP"){
+			document.getElementById("gtp").style.display='block';
+			document.getElementById("h2c2").style.display='none';			
+		}
+		else{
+			document.getElementById("gtp").style.display='none';
+			document.getElementById("h2c2").style.display='block';			
+		
+		}
+		  document.getElementById("roomList").style.display = 'block';
+		  document.getElementById("selectionForm").style.display = 'block';
+		  document.getElementById("purposeForm").style.display = 'none';
+		}
+	</script>
+	<script>
+		function myFunction() {
+		
+		
+		  document.getElementById("roomList").style.display = 'block';
+		  document.getElementById("selectionForm").style.display = 'block';
+		  document.getElementById("purposeForm").style.display = 'block';
+		}
+	</script>
+	<script>
+function myFun() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+	<script>
+	
+		$(document).ready(function() {
+		$('#example').DataTable();
+		} );
+	</script>
+
     <% } %>
 </body>
 </html>

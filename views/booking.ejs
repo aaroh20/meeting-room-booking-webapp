@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  
+<link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+
+<body>
+<h1>Associate Page</h1>
+
+
+	<div>
+		<form  onsubmit="Go()" id="selectionForm">
+			Date:
+				<input type="date" name="start_date">
+			&nbsp;&nbsp;&nbsp;
+			Time:
+				<select name="startTime" >
+					<option value="AM">AM</option>
+					<option value="PM">PM</option>
+				</select>
+			 
+			<br>	
+			<input type="checkbox" name="projector" >Projector &nbsp;&nbsp;
+			<input type="checkbox" name="monitor" >Monitor &nbsp;&nbsp;
+			<input type="checkbox" name="white_board" >White board
+			<br>
+		
+			Minimum Capacity:
+			<input type="number" name="capacity">
+			&nbsp;&nbsp;&nbsp;
+			Location:
+			<select name="location">
+				  <option value="GTP">GTP</option>
+				  <option value="C2">C2/H2</option>		  
+				</select>
+			<br>
+<!--			<input type="submit" class="btn btn-primary" value="GO"> -->
+
+		</form>
+	</div>
+	<br><br><br><br>
+	<div id="purposeForm" style="display: block;">
+		<table>
+		<tr>
+			<td>Purpose &nbsp;</td>
+			<td><textarea name="textarea" style="width:250px;height:50px;"></textarea></td>
+			
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;Details&nbsp; </td>
+			<td><textarea name="textarea" style="width:250px;height:50px;"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="4"><br><p align="center"><input class="btn btn-primary" type="submit" value="Submit"></p></td>
+		</tr>
+	</table>
+	</div>
+	
+	
+	
+	<script>
+	
+		$(document).ready(function() {
+		$('#example').DataTable();
+		} );
+	</script>
+	</body>
+</html>
